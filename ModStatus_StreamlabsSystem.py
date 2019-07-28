@@ -48,27 +48,15 @@ class Settings:
                         self.__dict__ = json.load(f, encoding='utf-8-sig')
         else: #set variables if no settings file
             self.OnlyLive = False
-            self.Command = "!command"
-            self.Permission = "Everyone"
-            self.PermissionInfo = ""
-            self.UseCD = True
-            self.CoolDown = 0
-            self.OnCooldown = "{0} the command is still on cooldown for {1} seconds!"
-            self.UserCooldown = 10
-            self.OnUserCooldown = "{0} the command is still on user cooldown for {1} seconds!"
-            self.NotEnoughResponse = "{0} you don't have enough points to run command"
-            self.ToggleMsg = "Command has been turned {0}"
-            self.R2Msg = "Command is enabled"
-            self.R1Msg = "Command is disabled"
-            self.R3Msg = "Response 3"
-            self.R4Msg = "Response 3"
-            self.R5Msg = "Response 3"
-            self.R1C = "off"
-            self.R2C = "on"
-            self.R3C = "R3"
-            self.R4C = "R4"
-            self.R5C = "R5"
-            self.ResponseList = "list"
+            self.Command = "!mods"
+            self.refresh = 10
+            self.StatusList = "Available,Lurk,AudioOnly,ChatOnly,Sleep,AFK,NoStatus,Offline"
+            self.DefaultStatus = "NoStatus"
+            self.WrongStatusMsg = "Message to be sent when choosing a wrong status"
+            self.GetStatus = "status"
+            self.sorting = "Status"
+            
+
             
 
 
@@ -232,7 +220,7 @@ def CheckMod():
         if Parent.HasPermission(i,"Moderator",""):
             if i not in Status:
                 global Status
-                Status.update({i:["Offline","NoStatus"]})
+                Status.update({i:["Offline",MySettings.DefaultStatus]})
             if i in AL:
                     
                 global Status
@@ -243,7 +231,7 @@ def CheckMod():
 
     for i in Status:
         if i not in VL:
-            Status[i] = ["Offline", "NoStatus"]
+            Status[i] = ["Offline", MySettings.DefaultStatus]
             
     StatusF = open("{}/StatusFile.txt".format(path()),"w+")
     StatusF.write(str(Status))

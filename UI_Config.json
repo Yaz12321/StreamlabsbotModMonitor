@@ -25,6 +25,13 @@
     "type": "textbox",
     "value": "Available,Lurk,AudioOnly,ChatOnly,Sleep,AFK,NoStatus,Offline",
   	"label": "List of statuses",
+    "tooltip": "List of statuses from which people can choose. separate by commas, no spaces. \r\n Include the Default Status in the list!",
+  	"group": "General"
+  },
+    "DefaultStatus": {
+    "type": "textbox",
+    "value": "NoStatus",
+  	"label": "List of statuses",
     "tooltip": "List of statuses from which people can choose. separate by commas, no spaces.",
   	"group": "General"
   },
