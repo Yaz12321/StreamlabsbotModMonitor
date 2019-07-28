@@ -295,7 +295,7 @@ def Execute(data): # Handle chat messages. Function is called whenever there is 
 
         #check if user has permission
         if startCheck and data.IsChatMessage() and data.GetParam(0).lower() == MySettings.Command.lower() and Parent.HasPermission(data.User,"Moderator",""):
-            if data.GetParam(1) == MySettings.GetStatus:
+            if data.GetParam(1).lower() == MySettings.GetStatus.lower():
                 DisplayStatus(data.User)
             else:
                 msg = data.Message.lower()
