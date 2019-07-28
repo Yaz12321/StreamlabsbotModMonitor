@@ -1,0 +1,63 @@
+﻿{
+  "output_file": "settings.json",
+    "OnlyLive": {
+    "type": "checkbox",
+    "value": false,
+  	"label": "Only when live",
+    "tooltip": "Command is only active when stream is live",
+  	"group": "General"
+  },
+    "Command": {
+    "type": "textbox",
+    "value": "!mods",
+  	"label": "Command Name",
+    "tooltip": "The command the bot will respond to",
+  	"group": "General"
+  },
+    "refresh": {
+    "type": "numberbox",
+  	"label": "Refresh rate",
+    "value": 10,
+    "tooltip": "Time to refresh status in seconds.",
+  	"group": "General"
+  },
+    "StatusList": {
+    "type": "textbox",
+    "value": "Available,Lurk,AudioOnly,ChatOnly,Sleep,AFK,NoStatus,Offline",
+  	"label": "List of statuses",
+    "tooltip": "List of statuses from which people can choose. separate by commas, no spaces.",
+  	"group": "General"
+  },
+    "WrongStatusMsg": {
+    "type": "textbox",
+    "value": "Please choose one of the following: ",
+    "label": "Wrong Status Message",
+    "tooltip": "Message to be sent when choosing a wrong status",
+    "group": "General"
+  },
+    "GetStatus": {
+    "type": "textbox",
+    "value": "status",
+    "label": "Get Status Parameter",
+    "tooltip": "Parameter to get the status of all the mods (by whisper)",
+    "group": "General"
+  },
+
+    "sorting": {
+    "type": "dropdown",
+    "value": "Status",
+    "items": ["Status","Availability"],
+    "label": "Sort by:",
+    "tooltip": "How to sort mods on Viewer",
+    "group": "General"
+  },
+    "OpenViewerBtn": {
+  	"type": "button",
+  	"label": "Open Status Viewer",
+  	"tooltip": "Open viewer",
+  	"function": "OpenViewerBtn",
+  	"wsevent": "",
+  	"group": "General"
+  },
+
+}
