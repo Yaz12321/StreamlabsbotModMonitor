@@ -84,24 +84,18 @@ def ReadStatus():
     StatusF.close()
     return Status
 
-Status = ReadStatus()
-
-if settings['sorting'] == "Status":
-    SortModsSL(Status)
-else:
-    SortModsOn(Status)
 
 
 
-t0 = time.time()
+
 
 while True:
-    if time.time() - t0 > settings['refresh']:
-        Status = ReadStatus()
-        if settings['sorting'] == "Status":
-            SortModsSL(Status)
-        else:
-            SortModsOn(Status)
-        t0 = time.time()
+
+    Status = ReadStatus()
+    if settings['sorting'] == "Status":
+        SortModsSL(Status)
+    else:
+        SortModsOn(Status)
+    time.sleep(settings['refresh'])
         
     
