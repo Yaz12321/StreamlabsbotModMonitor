@@ -60,7 +60,7 @@ def SortModsSL(modlist):
             print (n)
             for i in mlist:
                 if mlist[i][1].lower() == n.lower():
-                    print (i + ": " + mlist[i][0])
+                    print (i + "\t(" + mlist[i][0]  + ")")
             print ""
             print ""
 
@@ -82,7 +82,7 @@ def SortModsOn(modlist):
             print (n)
             for i in mlist:
                 if mlist[i][0].lower() == n.lower():
-                    print (i + ": " + mlist[i][1])
+                    print (i + "\t(" + mlist[i][1] + ")")
             print ""
             print ""
 
