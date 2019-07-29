@@ -31,8 +31,8 @@
     "DefaultStatus": {
     "type": "textbox",
     "value": "NoStatus",
-  	"label": "List of statuses",
-    "tooltip": "List of statuses from which people can choose. separate by commas, no spaces.",
+  	"label": "Default Status",
+    "tooltip": "Status given to mods by default (Include this in the List above)",
   	"group": "General"
   },
     "WrongStatusMsg": {
