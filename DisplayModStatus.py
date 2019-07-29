@@ -10,20 +10,30 @@ from datetime import datetime, timedelta
 def path(): # Get path of file
     path = os.path.dirname(os.path.abspath(__file__))
     return path
-
-settingsf = open("{}/settings.json".format(path()),"r+")
-settingsr = settingsf.read()
-settingsf.close()
-settingsr = settingsr.split("{",1)
-sr = "{" + settingsr[1]
-sr = sr.replace("  ","")
-sr = sr.replace("\n","")
-sr = sr.replace("\r","")
-sr = sr.replace("false","False")
-sr = sr.replace("true","True")
-#sr = sr.replace("\"","'")
-settings = literal_eval(sr)
-
+try:
+    settingsf = open("{}/settings.json".format(path()),"r+")
+    settingsr = settingsf.read()
+    settingsf.close()
+    settingsr = settingsr.split("{",1)
+    sr = "{" + settingsr[1]
+    sr = sr.replace("  ","")
+    sr = sr.replace("\n","")
+    sr = sr.replace("\r","")
+    sr = sr.replace("false","False")
+    sr = sr.replace("true","True")
+    #sr = sr.replace("\"","'")
+    settings = literal_eval(sr)
+except:
+    settings = {"OnlyLive": False,
+  "Command": "!mods",
+  "REdit": "edit",
+  "refresh": 10,
+  "StatusList": "Available,Lurk,AudioOnly,ChatOnly,Sleep,AFK,NoStatus,Offline",
+  "WrongStatusMsg": "Please choose one of the following: ",
+  "GetStatus": "status",
+  "sorting": "Status",
+  "DefaultStatus": "NoStatus"
+    }
 
 
 SL = ["Available","Lurk","AudioOnly","ChatOnly", "Sleep", "AFK", "NoStatus", "Offline"]
